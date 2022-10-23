@@ -45,7 +45,7 @@ func TestClient_GetAccountDetails(t *testing.T) {
 }
 
 func TestClient_CreateFolder(t *testing.T) {
-	debugPrint("OK", client().CreateFolder(root(), "aaa666"))
+	debugPrint(client().CreateFolder(root(), "aaa666"))
 }
 
 func TestClient_UploadFile(t *testing.T) {

@@ -22,6 +22,16 @@ type AccountDetails struct {
 	Total30DDLTrafficLimit interface{} `json:"total30DDLTrafficLimit"`
 }
 
+type FolderCreated struct {
+	Id           string        `json:"id"`
+	Type         string        `json:"type"`
+	Name         string        `json:"name"`
+	ParentFolder string        `json:"parentFolder"`
+	CreateTime   int           `json:"createTime"`
+	Childs       []interface{} `json:"childs"`
+	Code         string        `json:"code"`
+}
+
 type FileUpload struct {
 	DownloadPage string `json:"downloadPage"`
 	Code         string `json:"code"`

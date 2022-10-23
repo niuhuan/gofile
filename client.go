@@ -83,13 +83,12 @@ func (c *Client) GetAccountDetails() (*AccountDetails, error) {
 	}, nil)
 }
 
-func (c *Client) CreateFolder(parentFolderId string, folderName string) error {
-	_, err := ReqResponse[interface{}](c, "PUT", "createFolder", nil, map[string]string{
+func (c *Client) CreateFolder(parentFolderId string, folderName string) (*FolderCreated, error) {
+	return ReqResponse[FolderCreated](c, "PUT", "createFolder", nil, map[string]string{
 		"parentFolderId": parentFolderId,
 		"folderName":     folderName,
 		"token":          c.Token,
 	})
-	return err
 }
 
 func (c *Client) CopyContent(folderIdDest string, contentsId []string) error {
